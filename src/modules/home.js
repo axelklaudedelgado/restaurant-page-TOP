@@ -3,6 +3,8 @@ import 'flickity/css/flickity.css';
 import imagesLoaded from 'imagesloaded';
 
 export default function loadHome() {
+    const content = document.createElement("div");
+
     const slideshowContent = document.createElement("div");
     slideshowContent.classList.add("slideshowContainer");
 
@@ -62,5 +64,57 @@ export default function loadHome() {
         });
     });
 
-    return slideshowContent; 
+    const featuredItems = document.createElement("div");
+    featuredItems.classList.add("featuredItems");
+
+    const featuredHeader = document.createElement("h1");
+    featuredHeader.textContent = "Featured Items";  
+
+    const foodItems = document.createElement("div");
+    foodItems.classList.add("foodItems");
+
+    const items = [
+        { img: require("../assets/images/balut.png"), alt: "Sizzling Balut", description: "Juicy and flavorful Filipino delicacy, served sizzling hot!"},
+        { img: require("../assets/images/mojos.png"), alt: "Mojos", description: "Golden, crispy, potato perfection"},
+        { img: require("../assets/images/tofu.png"), alt: "Sizzling Tofu", description: "Savory tofu, oyster-flavored bliss!"}
+    ];
+
+    items.forEach(item => {
+        const foodItem = document.createElement("div");
+        foodItem.classList.add("foodItem");
+
+        const itemText = document.createElement("div");
+        itemText.classList.add("itemText");
+
+        const itemTitle = document.createElement("h1");
+        const itemDescription = document.createElement("h3");
+        itemTitle.textContent = item.alt;
+        itemDescription.textContent = item.description;
+
+        itemText.appendChild(itemTitle);
+        itemText.appendChild(itemDescription);
+
+        const img = document.createElement("img");
+        img.classList.add("itemImage");
+        img.src = item.img;
+        img.alt = item.alt;
+
+        foodItem.appendChild(itemText);
+        foodItem.appendChild(img);
+
+        foodItems.appendChild(foodItem);
+    });
+
+    const menuButton = document.createElement("button");
+    menuButton.classList.add("menuButton");
+    menuButton.textContent = "View Menu";
+
+    featuredItems.appendChild(featuredHeader);
+    featuredItems.appendChild(foodItems);
+    featuredItems.appendChild(menuButton);
+
+    content.appendChild(slideshowContent);
+    content.appendChild(featuredItems);
+
+    return content; 
 }
