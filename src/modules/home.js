@@ -113,8 +113,48 @@ export default function loadHome() {
     featuredItems.appendChild(foodItems);
     featuredItems.appendChild(menuButton);
 
+    const aboutContent = document.createElement("div");
+    aboutContent.classList.add("aboutContent");
+
+    const aboutContainer = document.createElement("div");
+    aboutContainer.classList.add("aboutContainer");
+
+    const aboutText = document.createElement("div");
+    aboutText.classList.add("aboutText");
+
+    const aboutHeading = document.createElement("h1");
+    aboutHeading.textContent = "Our Story";
+    aboutText.appendChild(aboutHeading);
+
+    const bodyText = ['In Kapampangan, "Bap" is a term of respect, meaning "uncle." For us, it symbolizes the bond we share, not just as family but as equals. Bap’s Food Station was born during the pandemic by three brothers—Bom, Dut, and Sey—and their nephew, Basti. United by their love for food, they aim to share the warmth and respect that "Bap" represents.',
+        'Basti believes that food is not only satisfying but far more pleasurable. He believes we should eat not merely to fill our stomachs but because we enjoy eating good food.'
+    ];
+
+    bodyText.forEach(text => {
+        const paragraph = document.createElement("p");
+        paragraph.classList.add("aboutBody");
+        paragraph.textContent = text;
+        aboutText.appendChild(paragraph);
+    })
+
+    const contactButton = document.createElement("button");
+    contactButton.classList.add("contactButton");
+    contactButton.textContent = "Contact Us";
+    aboutText.appendChild(contactButton);
+
+    const aboutImage = document.createElement("img");
+    aboutImage.classList.add("aboutImage");
+    aboutImage.src = require("../assets/images/basti.jpg");
+    aboutImage.alt = "Chef Basti";
+
+    aboutContainer.appendChild(aboutText);
+    aboutContainer.appendChild(aboutImage);
+
+    aboutContent.appendChild(aboutContainer);
+    
     content.appendChild(slideshowContent);
     content.appendChild(featuredItems);
+    content.appendChild(aboutContent);
 
     return content; 
 }

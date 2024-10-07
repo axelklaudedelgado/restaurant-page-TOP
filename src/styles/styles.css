@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 @font-face {
     font-family: 'rockoflfregular';
     src: url('../assets/fonts/rockoflf_regular-webfont.woff2') format('woff2'),
@@ -167,7 +169,7 @@ nav {
     margin-top: 300px;
     min-width: 951.5px;
     height: 500px;
-    margin-bottom: 80px;
+    margin-bottom: 70px;
 }
 
 .foodItems {
@@ -233,4 +235,62 @@ footer {
 a {
     color: inherit; 
     text-decoration: inherit; 
+}
+
+.aboutContent {
+    height: 571.8px;
+    display: flex;
+    justify-content: center;
+    background-color: #F5D46D;
+    padding: 50px;
+}
+
+.aboutContainer {
+    height: 100%;
+    width: 888.88px;
+    display: flex;
+    background-color: white;
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.aboutText {
+    padding: 40px;
+    width: 50%;
+    
+}
+
+.aboutBody {
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: justify;
+    margin: 18px 0;
+}
+
+.aboutImage {
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    object-position: 0 35%;
+}
+
+.contactButton {
+    background-color: #d62626;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'rockoflfregular', sans-serif;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    display: block;
+    margin: 0 auto;
+}
+
+.contactButton:hover {
+    background-color: #b41f1f;
+    cursor: pointer; 
 }
