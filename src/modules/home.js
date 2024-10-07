@@ -6,7 +6,7 @@ export default function loadHome() {
     const content = document.createElement("div");
 
     const slideshowContent = document.createElement("div");
-    slideshowContent.classList.add("slideshowContainer");
+    slideshowContent.classList.add("slideshowContent");
 
     const foodCategories = document.createElement("div");
     foodCategories.classList.add("foodCategories");
