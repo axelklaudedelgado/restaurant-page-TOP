@@ -95,7 +95,78 @@ export default function loadContact() {
     contactInfo.appendChild(contactGroups);
     contactInfo.appendChild(mapLocation); 
 
+    const contactMessage = document.createElement("div");
+    contactMessage.classList.add("contactMessage");
+    
+    const messageHeader = document.createElement("p");
+    const subtext = document.createElement("p");
+
+    messageHeader.classList.add("messageHeader");
+    subtext.classList.add("subtext");
+
+    messageHeader.textContent = "Send a Message";
+    subtext.textContent = "Your thoughts matter to us";
+
+    const formContainer = document.createElement('div');
+    formContainer.classList.add('formContainer');
+    
+    const messageForm = document.createElement('form');
+    messageForm.classList.add('messageForm');
+    
+    const nameLabel = document.createElement('label');
+    nameLabel.setAttribute('for', 'name');
+    nameLabel.textContent = 'Name:';
+    
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.maxLength = 50;
+    nameInput.placeholder = 'Name';
+    nameInput.name = 'name';
+    nameInput.id = 'name';
+    nameInput.required = true;
+    
+    const emailLabel = document.createElement('label');
+    emailLabel.setAttribute('for', 'email');
+    emailLabel.textContent = 'Email:';
+    
+    const emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.placeholder = 'Email';
+    emailInput.name = 'email';
+    emailInput.id = 'email';
+    emailInput.required = true;
+    
+    const messageLabel = document.createElement('label');
+    messageLabel.setAttribute('for', 'message');
+    messageLabel.textContent = 'Message:';
+    
+    const messageTextarea = document.createElement('textarea');
+    messageTextarea.placeholder = 'Your message here...';
+    messageTextarea.required = true;
+    messageTextarea.name = 'message';
+    messageTextarea.id = 'message';
+    messageTextarea.maxLength = 500;
+    
+    const submitButton = document.createElement('button');
+    submitButton.type = 'submit';
+    submitButton.textContent = 'Submit';
+    
+    messageForm.appendChild(nameLabel);
+    messageForm.appendChild(nameInput);
+    messageForm.appendChild(emailLabel);
+    messageForm.appendChild(emailInput);
+    messageForm.appendChild(messageLabel);
+    messageForm.appendChild(messageTextarea);
+    messageForm.appendChild(submitButton);
+    
+    formContainer.appendChild(messageForm);
+
+    contactMessage.appendChild(messageHeader);
+    contactMessage.appendChild(subtext);
+    contactMessage.appendChild(formContainer);
+
     contactBody.appendChild(contactInfo);
+    contactBody.appendChild(contactMessage);
 
     content.appendChild(contactHeader);
     content.appendChild(contactBody);
