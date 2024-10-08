@@ -1,4 +1,5 @@
 import loadHome from './modules/home.js';
+import loadContact from './modules/contact.js';
 
 import './styles/styles.css';
 
@@ -11,5 +12,6 @@ function loadTab(tab) {
 }
 
 document.querySelector('#homeButton').addEventListener('click', () => loadTab(loadHome));
+document.querySelector('#contactButton').addEventListener('click', () => loadTab(loadContact));
 
 loadTab(loadHome);

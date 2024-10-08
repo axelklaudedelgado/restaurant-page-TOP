@@ -8,6 +8,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'rockoultraflfregular';
+    src: url('../assets/fonts/rockoultraflf-webfont.woff2') format('woff2'),
+         url('../assets/fonts/rockoultraflf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *, *::before, *::after{
     margin: 0;
     padding: 0;
@@ -58,8 +66,9 @@ header {
 
 @media (max-width: 1320px) {
     .logoImage {
-        left: 0;       
-        top: 0;        
+        left: 10p;       
+        top: 0;     
+        height: 85px;   
     }
 }
 
@@ -293,4 +302,32 @@ a {
 .contactButton:hover {
     background-color: #b41f1f;
     cursor: pointer; 
+}
+
+
+/** Contact page styles **/
+
+.contactHeader {
+    background-image: url('../assets/images/sliderBackground1.png'); /* Designed by Freepik (www.freepik.com) */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.headerText {
+    font-size: 60px;
+    letter-spacing: 5px;
+    font-family: 'rockoultraflfregular';
+    font-style: normal;
+}
+
+.headerSubtext {
+    font-size: 25px;
+    letter-spacing: 2px;
 }
