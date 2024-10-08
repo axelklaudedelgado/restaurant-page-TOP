@@ -452,3 +452,38 @@ a {
 .messageForm button:hover {
     background-color: #b41f1f;
 }
+
+@media (max-width: 1680px) {
+    .formContainer {
+        margin-top: 40px;
+        height: 79%;
+        width: 78%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .contactGroups {
+        gap: 50px;
+    }
+    .mapLocation {
+        height: 67%;
+    }
+    .formContainer {
+        margin-top: 45px;
+        width: 78%;
+    }
+}
+  
+@media (max-width: 1024px) {
+    .contactGroups {
+        gap: 20px;
+    }
+    .mapLocation {
+        height: 60%;
+    }
+    .formContainer {
+        margin-top: 70px;
+        height: 70%;
+        width: 85%;
+    }
+}
