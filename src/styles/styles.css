@@ -97,7 +97,7 @@ nav {
     border-bottom: 2px solid transparent;
 }
 
-.navButtons:hover {
+.navButtons:hover, .activeNav {
     border-bottom: 2px solid #e9b303;
     color: #e9b303;
     cursor: pointer;
