@@ -1,6 +1,6 @@
 import loadHome from './modules/home.js';
 import loadContact from './modules/contact.js';
-import loadTab from './utils/tabLoader.js';
+import { loadTab } from './utils/utils.js';
 
 import './styles/styles.css';
 

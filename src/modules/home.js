@@ -2,7 +2,7 @@ import Flickity from "flickity";
 import "flickity/css/flickity.css";
 import imagesLoaded from "imagesloaded";
 
-import loadTab from "../utils/tabLoader.js";
+import { loadTab } from "../utils/utils.js";
 import loadContact from "./contact.js"; 
 
 export default function loadHome() {
@@ -145,7 +145,7 @@ export default function loadHome() {
     contactButton.textContent = "Contact Us";
 
     contactButton.addEventListener("click", () => loadTab(loadContact));
-    
+
     aboutText.appendChild(contactButton);
 
     const aboutImage = document.createElement("img");
