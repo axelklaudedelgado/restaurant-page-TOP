@@ -66,7 +66,7 @@ header {
 
 @media (max-width: 1320px) {
     .logoImage {
-        left: 10p;       
+        left: 0px;       
         top: 0;     
         height: 85px;   
     }
@@ -203,6 +203,7 @@ nav {
 }
 
 .itemText {
+    align-self: flex-start;
     padding: 20px;
     color: #0D0D0D;
 }
@@ -323,7 +324,7 @@ a {
 .headerText {
     font-size: 60px;
     letter-spacing: 5px;
-    font-family: 'rockoultraflfregular';
+    font-family: 'rockoultraflfregular', sans-serif;
     font-style: normal;
 }
 
@@ -352,7 +353,7 @@ a {
 .contactGroups {
     display: flex;
     margin: 40px;
-    gap: 80px; /* Default for large screens like 1920px */
+    gap: 80px;
 }
 
 .contactGroups img {
