@@ -2,7 +2,7 @@ import Flickity from "flickity";
 import "flickity/css/flickity.css";
 import imagesLoaded from "imagesloaded";
 
-import { loadTab } from "../utils/utils.js";
+import { loadTab, handleActiveState } from "../utils/utils.js";
 import loadContact from "./contact.js"; 
 
 export default function loadHome() {
@@ -144,7 +144,12 @@ export default function loadHome() {
     contactButton.classList.add("contactButton");
     contactButton.textContent = "Contact Us";
 
-    contactButton.addEventListener("click", () => loadTab(loadContact));
+    contactButton.addEventListener("click", () => {
+        loadTab(loadContact);
+
+        const navButtons = document.querySelectorAll(".navButtons");
+        handleActiveState(navButtons, document.querySelector("#contactButton"), "activeNav");
+    });
 
     aboutText.appendChild(contactButton);
 

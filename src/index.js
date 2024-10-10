@@ -11,7 +11,10 @@ navButtons.forEach(nav => {
     });
 });
 
-document.querySelector("#homeButton").addEventListener("click", () => loadTab(loadHome));
+const homeButton = document.querySelector("#homeButton");
+homeButton.classList.add("activeNav");
+
+homeButton.addEventListener("click", () => loadTab(loadHome));
 document.querySelector("#contactButton").addEventListener("click", () => loadTab(loadContact));
 
 loadTab(loadHome);
