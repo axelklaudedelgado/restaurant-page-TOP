@@ -74,7 +74,8 @@ export default function loadMenu(category) {
             itemText.appendChild(itemPriceContainer);
 
             const img = document.createElement("img");
-            if(imageManipulation === "round")img.classList.add("circleImage");
+            if (imageManipulation === "round")img.classList.add("circleImage");
+            if (imageManipulation === "padded")img.classList.add("paddedImage");
             img.src = item.img;
             img.alt = item.name;
             img.classList.add("itemImage");
@@ -309,6 +310,29 @@ export default function loadMenu(category) {
         ];
 
         createCategoryDisplay("Other Food Items", items);
+    } else if (category === "platter") {
+        handleActiveState(Array.from(foodCategories.children), foodCategories.children[3], "activeCategory");
+        const items = [
+            { 
+                name: "Mighty Wings", 
+                price: [
+                    { price: "PHP 400", pieceCount: "20 PCS" }, 
+                    { price: "PHP 800", pieceCount: "40 PCS" }
+                ],
+                img: require("../assets/images/platter.png"),
+            },
+            {
+                name: "Street Foods",
+                price: [
+                    { price: "PHP 100", pieceCount: "SMALL" }, 
+                    { price: "PHP 150", pieceCount: "MEDIUM" },
+                    { price: "PHP 200", pieceCount: "LARGE" }
+                ],
+                img: require("../assets/images/streetPlatter.png"),
+            }
+        ];
+
+        createCategoryDisplay("Platters", items, "padded");
     }
     
     content.appendChild(menuCategories);
