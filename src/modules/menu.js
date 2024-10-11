@@ -250,6 +250,65 @@ export default function loadMenu(category) {
         ];
 
         createCategoryDisplay("Street Foods", items);
+    } else if (category === "other") {
+        handleActiveState(Array.from(foodCategories.children), foodCategories.children[2], "activeCategory");
+        const items = [
+            { 
+                name: "Flavored Rice", 
+                price: [
+                    { price: "PHP 10", pieceCount: "1 CUP - STEAMED" }, 
+                    { price: "PHP 15", pieceCount: "1 CUP - SOY FRIED" },
+                    { price: "PHP 15", pieceCount: "1 CUP - GARLIC FRIED" }, 
+                    { price: "PHP 15", pieceCount: "1 CUP - JAVA" }
+                ],
+                img: require("../assets/images/rice.png"),
+            },
+            { 
+                name: "Sizzling Balut", 
+                price: [
+                    { price: "PHP 80", pieceCount: "4 PCS" }, 
+                    { price: "PHP 130", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/balut.png"),
+            },
+            { 
+                name: "Gulaman", 
+                price: [
+                    { price: "PHP 20", pieceCount: "16 OZ" } 
+                ],
+                img: require("../assets/images/gulaman.png"),
+            },
+            {
+                name: "Mojos",
+                price: [
+                    { price: "PHP 60", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/mojos.png"),
+            },
+            {
+                name: "Bapcorn",
+                price: [
+                    { price: "PHP 100", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/bapcorn.png"),
+            },
+            {
+                name: "Oysterrific Tofu",
+                price: [
+                    { price: "PHP 80", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/tofu.png"),
+            },
+            {
+                name: "Ham & Cheese Lumpia",
+                price: [
+                    { price: "PHP 60", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/cheesesticks.png"),
+            },
+        ];
+
+        createCategoryDisplay("Other Food Items", items);
     }
     
     content.appendChild(menuCategories);
