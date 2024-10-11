@@ -361,6 +361,14 @@ a {
     font-weight: 400;
 }
 
+.circleImage {
+    border-radius: 100%;
+    object-fit: cover;
+    padding-bottom: 5px;
+    width: auto;
+    height: 42%;
+}
+
 /** Contact page styles **/
 
 .contactHeader {

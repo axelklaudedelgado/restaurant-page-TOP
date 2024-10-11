@@ -32,7 +32,7 @@ export default function loadMenu(category) {
     const categoryItems = document.createElement("div");
     categoryItems.classList.add("categoryItems");
 
-    const createCategoryDisplay = (categoryName, items) => {
+    const createCategoryDisplay = (categoryName, items, imageManipulation = null) => {
         const categoryTitle = document.createElement("h1");
         categoryTitle.textContent = categoryName;
 
@@ -61,7 +61,7 @@ export default function loadMenu(category) {
                 const priceText = document.createTextNode(priceInfo.price);
                 const pieceCountSpan = document.createElement("span");
                 pieceCountSpan.classList.add("pieceCount");
-                pieceCountSpan.textContent = `- ${priceInfo.pieceCount}`;
+                pieceCountSpan.textContent = ` - ${priceInfo.pieceCount}`;
             
                 price.appendChild(priceText);
                 price.appendChild(pieceCountSpan);
@@ -71,6 +71,7 @@ export default function loadMenu(category) {
             itemText.appendChild(itemPriceContainer);
 
             const img = document.createElement("img");
+            if(imageManipulation === "round")img.classList.add("circleImage");
             img.src = item.img;
             img.alt = item.alt;
             img.classList.add("itemImage");
