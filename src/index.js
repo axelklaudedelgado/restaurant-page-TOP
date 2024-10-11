@@ -1,4 +1,5 @@
 import loadHome from "./modules/home.js";
+import loadMenu from "./modules/menu.js";
 import loadContact from "./modules/contact.js";
 import { loadTab, handleActiveState } from "./utils/utils.js";
 
@@ -16,5 +17,6 @@ homeButton.classList.add("activeNav");
 
 homeButton.addEventListener("click", () => loadTab(loadHome));
 document.querySelector("#contactButton").addEventListener("click", () => loadTab(loadContact));
+document.querySelector("#menuButton").addEventListener("click", () => loadTab(loadMenu, "featured"));
 
 loadTab(loadHome);
