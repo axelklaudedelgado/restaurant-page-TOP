@@ -31,57 +31,13 @@ export default function loadMenu(category) {
     
     const categoryItems = document.createElement("div");
     categoryItems.classList.add("categoryItems");
-    const categoryTitle = document.createElement("h1");
 
-    if (category === "featured") {
-        categoryTitle.textContent = "Manager's Choice";
+    const createCategoryDisplay = (categoryName, items) => {
+        const categoryTitle = document.createElement("h1");
+        categoryTitle.textContent = categoryName;
 
         const itemCards = document.createElement("div");
         itemCards.classList.add("itemCards");
-
-        const items = [
-            { 
-                name: "Sizzling Balut", 
-                price: [
-                    { price: "PHP 80", pieceCount: "4 PCS" }, 
-                    { price: "PHP 130", pieceCount: "6 PCS" }
-                ],
-                img: require("../assets/images/balut.png"),
-                alt: "Sizzling Balut"
-            },
-            {
-                name: "Mojos",
-                price: [
-                    { price: "PHP 60", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/mojos.png"),
-                alt: "Mojos"
-            },
-            {
-                name: "Oysterrific Tofu",
-                price: [
-                    { price: "PHP 80", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/tofu.png"),
-                alt: "Oysterrific Tofu"
-            },
-            {
-                name: "Ham & Cheese Lumpia",
-                price: [
-                    { price: "PHP 60", pieceCount: "6 PCS" }
-                ],
-                img: require("../assets/images/cheesesticks.png"),
-                alt: "Ham & Cheese Lumpia"
-            },
-            {
-                name: "Bapcorn",
-                price: [
-                    { price: "PHP 100", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/bapcorn.png"),
-                alt: "Bapcorn"
-            }
-        ];
 
         items.forEach(item => {
             const card = document.createElement("div");
@@ -126,6 +82,54 @@ export default function loadMenu(category) {
         });
         categoryItems.appendChild(categoryTitle);
         categoryItems.appendChild(itemCards);
+    };
+
+    if (category === "featured") {
+        const items = [
+            { 
+                name: "Sizzling Balut", 
+                price: [
+                    { price: "PHP 80", pieceCount: "4 PCS" }, 
+                    { price: "PHP 130", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/balut.png"),
+                alt: "Sizzling Balut"
+            },
+            {
+                name: "Mojos",
+                price: [
+                    { price: "PHP 60", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/mojos.png"),
+                alt: "Mojos"
+            },
+            {
+                name: "Oysterrific Tofu",
+                price: [
+                    { price: "PHP 80", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/tofu.png"),
+                alt: "Oysterrific Tofu"
+            },
+            {
+                name: "Ham & Cheese Lumpia",
+                price: [
+                    { price: "PHP 60", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/cheesesticks.png"),
+                alt: "Ham & Cheese Lumpia"
+            },
+            {
+                name: "Bapcorn",
+                price: [
+                    { price: "PHP 100", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/bapcorn.png"),
+                alt: "Bapcorn"
+            }
+        ];
+
+        createCategoryDisplay("Manager's Choice", items);
     }
     
     content.appendChild(menuCategories);
