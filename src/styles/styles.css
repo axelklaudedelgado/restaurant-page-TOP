@@ -141,6 +141,17 @@ nav {
     background-color: rgba(240, 240, 240, 0.25);
 }
 
+.activeCategory {
+    background-color: white;
+    font-weight: bold;
+    color: #a6080f;
+}
+
+.activeCategory:hover {
+    background-color: white;
+}
+
+
 .category img {
     height: 90%;
     width: auto;
