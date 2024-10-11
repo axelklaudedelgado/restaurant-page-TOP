@@ -305,6 +305,15 @@ a {
     cursor: pointer; 
 }
 
+/** Menu page styles **/
+.menuCategories {
+    background-image: url('../assets/images/sliderBackground1.png'); /* Designed by Freepik (www.freepik.com) */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 165px;
+    display: flex;
+    flex-direction: column;
+}
 
 /** Contact page styles **/
 
