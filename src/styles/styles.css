@@ -376,10 +376,15 @@ a {
 
 .circleImage {
     border-radius: 100%;
-    object-fit: cover;
     padding-bottom: 5px;
     width: auto;
     height: 42%;
+}
+
+.paddedImage {
+    padding-bottom: 5px;
+    width: auto;
+    height: 45%;
 }
 
 /** Contact page styles **/
