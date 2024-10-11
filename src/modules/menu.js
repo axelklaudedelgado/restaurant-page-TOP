@@ -1,3 +1,5 @@
+import { handleActiveState } from "../utils/utils.js";
+
 export default function loadMenu(category) {
     const content = document.createElement("div");
 
@@ -131,6 +133,48 @@ export default function loadMenu(category) {
         ];
 
         createCategoryDisplay("Manager's Choice", items);
+    } else if (category === "wings") {
+        handleActiveState(Array.from(foodCategories.children), foodCategories.children[0], "activeCategory");
+        const items = [
+            { 
+                name: "Spicy Buffalo", 
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/buffaloItem.jpg"),
+                alt: "Spicy Buffalo"
+            },
+            {
+                name: "Garlic Parmesan",
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/parmesanItem.jpg"),
+                alt: "Garlic Parmesan"
+            },
+            {
+                name: "Soy Garlic",
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/soyItem.jpg"),
+                alt: "Soy Garlic"
+            },
+            {
+                name: "Honey Butter Garlic",
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/honeyItem.jpg"),
+                alt: "Honey Butter Garlic"
+            },
+        ];
+
+        createCategoryDisplay("Chicken Wings", items, "round");
     }
     
     content.appendChild(menuCategories);
