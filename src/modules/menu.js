@@ -75,7 +75,7 @@ export default function loadMenu(category) {
             const img = document.createElement("img");
             if(imageManipulation === "round")img.classList.add("circleImage");
             img.src = item.img;
-            img.alt = item.alt;
+            img.alt = item.name;
             img.classList.add("itemImage");
 
             card.appendChild(itemText);
@@ -96,7 +96,6 @@ export default function loadMenu(category) {
                     { price: "PHP 130", pieceCount: "6 PCS" }
                 ],
                 img: require("../assets/images/balut.png"),
-                alt: "Sizzling Balut"
             },
             {
                 name: "Mojos",
@@ -104,7 +103,6 @@ export default function loadMenu(category) {
                     { price: "PHP 60", pieceCount: "1 BOX" }
                 ],
                 img: require("../assets/images/mojos.png"),
-                alt: "Mojos"
             },
             {
                 name: "Oysterrific Tofu",
@@ -112,7 +110,6 @@ export default function loadMenu(category) {
                     { price: "PHP 80", pieceCount: "1 BOX" }
                 ],
                 img: require("../assets/images/tofu.png"),
-                alt: "Oysterrific Tofu"
             },
             {
                 name: "Ham & Cheese Lumpia",
@@ -120,7 +117,6 @@ export default function loadMenu(category) {
                     { price: "PHP 60", pieceCount: "6 PCS" }
                 ],
                 img: require("../assets/images/cheesesticks.png"),
-                alt: "Ham & Cheese Lumpia"
             },
             {
                 name: "Bapcorn",
@@ -128,7 +124,6 @@ export default function loadMenu(category) {
                     { price: "PHP 100", pieceCount: "1 BOX" }
                 ],
                 img: require("../assets/images/bapcorn.png"),
-                alt: "Bapcorn"
             }
         ];
 
@@ -143,7 +138,6 @@ export default function loadMenu(category) {
                     { price: "PHP 160", pieceCount: "8 PCS" }
                 ],
                 img: require("../assets/images/buffaloItem.jpg"),
-                alt: "Spicy Buffalo"
             },
             {
                 name: "Garlic Parmesan",
@@ -152,7 +146,6 @@ export default function loadMenu(category) {
                     { price: "PHP 160", pieceCount: "8 PCS" }
                 ],
                 img: require("../assets/images/parmesanItem.jpg"),
-                alt: "Garlic Parmesan"
             },
             {
                 name: "Soy Garlic",
@@ -161,7 +154,6 @@ export default function loadMenu(category) {
                     { price: "PHP 160", pieceCount: "8 PCS" }
                 ],
                 img: require("../assets/images/soyItem.jpg"),
-                alt: "Soy Garlic"
             },
             {
                 name: "Honey Butter Garlic",
@@ -170,7 +162,6 @@ export default function loadMenu(category) {
                     { price: "PHP 160", pieceCount: "8 PCS" }
                 ],
                 img: require("../assets/images/honeyItem.jpg"),
-                alt: "Honey Butter Garlic"
             },
         ];
 
