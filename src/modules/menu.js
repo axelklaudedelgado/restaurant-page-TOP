@@ -51,6 +51,7 @@ export default function loadMenu(category) {
             const itemName = document.createElement("h1");
             itemName.classList.add("itemName");
             itemName.textContent = item.name;
+            if(itemName.textContent === "Chicken & Cheese Dynamite") itemName.style.fontSize = "30px";
             itemText.appendChild(itemName);
 
             const itemPriceContainer = document.createElement("div");
@@ -166,6 +167,89 @@ export default function loadMenu(category) {
         ];
 
         createCategoryDisplay("Chicken Wings", items, "round");
+    } else if (category === "street") {
+        handleActiveState(Array.from(foodCategories.children), foodCategories.children[1], "activeCategory");
+        const items = [
+            { 
+                name: "Fish Balls", 
+                price: [
+                    { price: "PHP 20", pieceCount: "20 PCS" } 
+                ],
+                img: require("../assets/images/fishball.png"),
+            },
+            { 
+                name: "Hotdog", 
+                price: [
+                    { price: "PHP 30", pieceCount: "12 PCS" } 
+                ],
+                img: require("../assets/images/hotdog.png"),
+            },
+            { 
+                name: "Chicken Balls", 
+                price: [
+                    { price: "PHP 30", pieceCount: "8 PCS" } 
+                ],
+                img: require("../assets/images/chickenball.png"),
+            },
+            { 
+                name: "Kikiam", 
+                price: [
+                    { price: "PHP 20", pieceCount: "8 PCS" } 
+                ],
+                img: require("../assets/images/kikiam.png"),
+            },
+            { 
+                name: "Kwek-Kwek", 
+                price: [
+                    { price: "PHP 30", pieceCount: "5 PCS" } 
+                ],
+                img: require("../assets/images/kwekkwek.png"),
+            },
+            { 
+                name: "Tokwa", 
+                price: [
+                    { price: "PHP 20", pieceCount: "5 PCS" } 
+                ],
+                img: require("../assets/images/tokwa.png"),
+            },
+            { 
+                name: "Siomai", 
+                price: [
+                    { price: "PHP 30", pieceCount: "5 PCS" } 
+                ],
+                img: require("../assets/images/siomai.png"),
+            },
+            { 
+                name: "One Day Old", 
+                price: [
+                    { price: "PHP 35", pieceCount: "3 PCS" } 
+                ],
+                img: require("../assets/images/oneDayOld.png"),
+            },
+            { 
+                name: "Pork & Cheese Dynamite", 
+                price: [
+                    { price: "PHP 80", pieceCount: "6 PCS" } 
+                ],
+                img: require("../assets/images/porkcheese.png"),
+            },
+            { 
+                name: "Chicken & Cheese Dynamite", 
+                price: [
+                    { price: "PHP 80", pieceCount: "6 PCS" } 
+                ],
+                img: require("../assets/images/chickencheese.png"),
+            },
+            { 
+                name: "Ham & Cheese Dynamite", 
+                price: [
+                    { price: "PHP 80", pieceCount: "6 PCS" } 
+                ],
+                img: require("../assets/images/hamcheese.png"),
+            }
+        ];
+
+        createCategoryDisplay("Street Foods", items);
     }
     
     content.appendChild(menuCategories);
