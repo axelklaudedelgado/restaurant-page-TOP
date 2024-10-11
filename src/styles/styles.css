@@ -315,6 +315,52 @@ a {
     flex-direction: column;
 }
 
+.categoryItems {
+    max-width: 1024px;
+    background-color: white;
+    min-height: 900px;
+    margin: 0 auto;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    padding: 40px;
+}
+
+.itemCards {
+    padding: 20px 0;  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    height: 350px;
+    background-color: #e9b303;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.itemName {
+    font-family: 'rockoultraflfregular', sans-serif;
+
+}
+
+.itemPrice {
+    margin-top: 10px;
+}
+
+.price {
+    font-family: 'rockoultraflfregular', sans-serif;
+}
+
+.pieceCount {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+
 /** Contact page styles **/
 
 .contactHeader {
