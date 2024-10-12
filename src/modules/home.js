@@ -3,6 +3,7 @@ import "flickity/css/flickity.css";
 import imagesLoaded from "imagesloaded";
 
 import { loadTab, handleActiveState } from "../utils/utils.js";
+import loadMenu from "./menu.js";
 import loadContact from "./contact.js"; 
 
 export default function loadHome() {
@@ -15,15 +16,21 @@ export default function loadHome() {
     foodCategories.classList.add("foodCategories");
 
     const categories = [
-        { img: require("../assets/images/wings.png"), alt: "Chicken Wings Item", label: "Wings" },
-        { img: require("../assets/images/streetFood.png"), alt: "Street Food Item", label: "Street Foods" },
-        { img: require("../assets/images/mojos.png"), alt: "Other Item", label: "Other Items" },
-        { img: require("../assets/images/platter.png"), alt: "Platter Item", label: "Platters" }
+        { img: require("../assets/images/wings.png"), alt: "Chicken Wings Item", label: "Wings", categoryName: "wings" },
+        { img: require("../assets/images/streetFood.png"), alt: "Street Food Item", label: "Street Foods", categoryName: "street" },
+        { img: require("../assets/images/mojos.png"), alt: "Other Item", label: "Other Items", categoryName: "other" },
+        { img: require("../assets/images/platter.png"), alt: "Platter Item", label: "Platters", categoryName: "platter" }
     ];
 
     categories.forEach(category => {
         const button = document.createElement("button");
         button.classList.add("category");
+        button.addEventListener("click", () => {
+            loadTab(loadMenu, category.categoryName);
+
+            const navButtons = document.querySelectorAll(".navButtons");
+            handleActiveState(navButtons, document.querySelector("#menuButton"), "activeNav");
+        });
 
         const img = document.createElement("img");
         img.src = category.img;
