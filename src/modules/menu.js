@@ -1,5 +1,248 @@
 import { loadTab, handleActiveState } from "../utils/utils.js";
 
+const categoriesData = {
+    featured: {
+        title: "Manager's Choice",
+        items:[
+            { 
+                name: "Sizzling Balut", 
+                price: [
+                    { price: "PHP 80", pieceCount: "4 PCS" }, 
+                    { price: "PHP 130", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/balut.png"),
+            },
+            {
+                name: "Mojos",
+                price: [
+                    { price: "PHP 60", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/mojos.png"),
+            },
+            {
+                name: "Oysterrific Tofu",
+                price: [
+                    { price: "PHP 80", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/tofu.png"),
+            },
+            {
+                name: "Ham & Cheese Lumpia",
+                price: [
+                    { price: "PHP 60", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/cheesesticks.png"),
+            },
+            {
+                name: "Bapcorn",
+                price: [
+                    { price: "PHP 100", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/bapcorn.png"),
+            }
+        ]
+    },
+    wings: {
+        title: "Mighty Wings",
+        items: [
+            { 
+                name: "Spicy Buffalo", 
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/buffaloItem.jpg"),
+            },
+            {
+                name: "Garlic Parmesan",
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/parmesanItem.jpg"),
+            },
+            {
+                name: "Soy Garlic",
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/soyItem.jpg"),
+            },
+            {
+                name: "Honey Butter Garlic",
+                price: [
+                    { price: "PHP 130", pieceCount: "6 PCS" }, 
+                    { price: "PHP 160", pieceCount: "8 PCS" }
+                ],
+                img: require("../assets/images/honeyItem.jpg"),
+            },
+        ]
+    },
+    street: {
+        title: "Luxury Street Foods",
+        items: [
+            { 
+                name: "Fish Balls", 
+                price: [
+                    { price: "PHP 20", pieceCount: "20 PCS" } 
+                ],
+                img: require("../assets/images/fishball.png"),
+            },
+            { 
+                name: "Hotdog", 
+                price: [
+                    { price: "PHP 30", pieceCount: "12 PCS" } 
+                ],
+                img: require("../assets/images/hotdog.png"),
+            },
+            { 
+                name: "Chicken Balls", 
+                price: [
+                    { price: "PHP 30", pieceCount: "8 PCS" } 
+                ],
+                img: require("../assets/images/chickenball.png"),
+            },
+            { 
+                name: "Kikiam", 
+                price: [
+                    { price: "PHP 20", pieceCount: "8 PCS" } 
+                ],
+                img: require("../assets/images/kikiam.png"),
+            },
+            { 
+                name: "Kwek-Kwek", 
+                price: [
+                    { price: "PHP 30", pieceCount: "5 PCS" } 
+                ],
+                img: require("../assets/images/kwekkwek.png"),
+            },
+            { 
+                name: "Tokwa", 
+                price: [
+                    { price: "PHP 20", pieceCount: "5 PCS" } 
+                ],
+                img: require("../assets/images/tokwa.png"),
+            },
+            { 
+                name: "Siomai", 
+                price: [
+                    { price: "PHP 30", pieceCount: "5 PCS" } 
+                ],
+                img: require("../assets/images/siomai.png"),
+            },
+            { 
+                name: "One Day Old", 
+                price: [
+                    { price: "PHP 35", pieceCount: "3 PCS" } 
+                ],
+                img: require("../assets/images/oneDayOld.png"),
+            },
+            { 
+                name: "Pork & Cheese Dynamite", 
+                price: [
+                    { price: "PHP 80", pieceCount: "6 PCS" } 
+                ],
+                img: require("../assets/images/porkcheese.png"),
+            },
+            { 
+                name: "Chicken & Cheese Dynamite", 
+                price: [
+                    { price: "PHP 80", pieceCount: "6 PCS" } 
+                ],
+                img: require("../assets/images/chickencheese.png"),
+            },
+            { 
+                name: "Ham & Cheese Dynamite", 
+                price: [
+                    { price: "PHP 80", pieceCount: "6 PCS" } 
+                ],
+                img: require("../assets/images/hamcheese.png"),
+            }
+        ]
+    },
+    other: {
+        title: "Other Food Items",
+        items: [
+            { 
+                name: "Flavored Rice", 
+                price: [
+                    { price: "PHP 10", pieceCount: "1 CUP - STEAMED" }, 
+                    { price: "PHP 15", pieceCount: "1 CUP - SOY FRIED" },
+                    { price: "PHP 15", pieceCount: "1 CUP - GARLIC FRIED" }, 
+                    { price: "PHP 15", pieceCount: "1 CUP - JAVA" }
+                ],
+                img: require("../assets/images/rice.png"),
+            },
+            { 
+                name: "Sizzling Balut", 
+                price: [
+                    { price: "PHP 80", pieceCount: "4 PCS" }, 
+                    { price: "PHP 130", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/balut.png"),
+            },
+            { 
+                name: "Gulaman", 
+                price: [
+                    { price: "PHP 20", pieceCount: "16 OZ" } 
+                ],
+                img: require("../assets/images/gulaman.png"),
+            },
+            {
+                name: "Mojos",
+                price: [
+                    { price: "PHP 60", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/mojos.png"),
+            },
+            {
+                name: "Bapcorn",
+                price: [
+                    { price: "PHP 100", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/bapcorn.png"),
+            },
+            {
+                name: "Oysterrific Tofu",
+                price: [
+                    { price: "PHP 80", pieceCount: "1 BOX" }
+                ],
+                img: require("../assets/images/tofu.png"),
+            },
+            {
+                name: "Ham & Cheese Lumpia",
+                price: [
+                    { price: "PHP 60", pieceCount: "6 PCS" }
+                ],
+                img: require("../assets/images/cheesesticks.png"),
+            },
+        ]
+    },
+    platter: {
+        title: "Platters",
+        items: [
+            { 
+                name: "Mighty Wings", 
+                price: [
+                    { price: "PHP 400", pieceCount: "20 PCS" }, 
+                    { price: "PHP 800", pieceCount: "40 PCS" }
+                ],
+                img: require("../assets/images/platter.png"),
+            },
+            {
+                name: "Street Foods",
+                price: [
+                    { price: "PHP 100", pieceCount: "SMALL" }, 
+                    { price: "PHP 150", pieceCount: "MEDIUM" },
+                    { price: "PHP 200", pieceCount: "LARGE" }
+                ],
+                img: require("../assets/images/streetPlatter.png"),
+            }
+        ]
+    }
+};
+
 export default function loadMenu(category) {
     const content = document.createElement("div");
 
@@ -92,250 +335,17 @@ export default function loadMenu(category) {
         categoryItems.appendChild(itemCards);
     };
 
-    if (category === "featured") {
-        const items = [
-            { 
-                name: "Sizzling Balut", 
-                price: [
-                    { price: "PHP 80", pieceCount: "4 PCS" }, 
-                    { price: "PHP 130", pieceCount: "6 PCS" }
-                ],
-                img: require("../assets/images/balut.png"),
-            },
-            {
-                name: "Mojos",
-                price: [
-                    { price: "PHP 60", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/mojos.png"),
-            },
-            {
-                name: "Oysterrific Tofu",
-                price: [
-                    { price: "PHP 80", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/tofu.png"),
-            },
-            {
-                name: "Ham & Cheese Lumpia",
-                price: [
-                    { price: "PHP 60", pieceCount: "6 PCS" }
-                ],
-                img: require("../assets/images/cheesesticks.png"),
-            },
-            {
-                name: "Bapcorn",
-                price: [
-                    { price: "PHP 100", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/bapcorn.png"),
-            }
-        ];
+    const selectedCategoryData = categoriesData[category];
+    const categoryArray = Object.keys(categoriesData);
+    const selectedCategoryIndex = categoryArray.indexOf(category);
 
-        createCategoryDisplay("Manager's Choice", items);
-    } else if (category === "wings") {
-        handleActiveState(Array.from(foodCategories.children), foodCategories.children[0], "activeCategory");
-        const items = [
-            { 
-                name: "Spicy Buffalo", 
-                price: [
-                    { price: "PHP 130", pieceCount: "6 PCS" }, 
-                    { price: "PHP 160", pieceCount: "8 PCS" }
-                ],
-                img: require("../assets/images/buffaloItem.jpg"),
-            },
-            {
-                name: "Garlic Parmesan",
-                price: [
-                    { price: "PHP 130", pieceCount: "6 PCS" }, 
-                    { price: "PHP 160", pieceCount: "8 PCS" }
-                ],
-                img: require("../assets/images/parmesanItem.jpg"),
-            },
-            {
-                name: "Soy Garlic",
-                price: [
-                    { price: "PHP 130", pieceCount: "6 PCS" }, 
-                    { price: "PHP 160", pieceCount: "8 PCS" }
-                ],
-                img: require("../assets/images/soyItem.jpg"),
-            },
-            {
-                name: "Honey Butter Garlic",
-                price: [
-                    { price: "PHP 130", pieceCount: "6 PCS" }, 
-                    { price: "PHP 160", pieceCount: "8 PCS" }
-                ],
-                img: require("../assets/images/honeyItem.jpg"),
-            },
-        ];
-
-        createCategoryDisplay("Chicken Wings", items, "round");
-    } else if (category === "street") {
-        handleActiveState(Array.from(foodCategories.children), foodCategories.children[1], "activeCategory");
-        const items = [
-            { 
-                name: "Fish Balls", 
-                price: [
-                    { price: "PHP 20", pieceCount: "20 PCS" } 
-                ],
-                img: require("../assets/images/fishball.png"),
-            },
-            { 
-                name: "Hotdog", 
-                price: [
-                    { price: "PHP 30", pieceCount: "12 PCS" } 
-                ],
-                img: require("../assets/images/hotdog.png"),
-            },
-            { 
-                name: "Chicken Balls", 
-                price: [
-                    { price: "PHP 30", pieceCount: "8 PCS" } 
-                ],
-                img: require("../assets/images/chickenball.png"),
-            },
-            { 
-                name: "Kikiam", 
-                price: [
-                    { price: "PHP 20", pieceCount: "8 PCS" } 
-                ],
-                img: require("../assets/images/kikiam.png"),
-            },
-            { 
-                name: "Kwek-Kwek", 
-                price: [
-                    { price: "PHP 30", pieceCount: "5 PCS" } 
-                ],
-                img: require("../assets/images/kwekkwek.png"),
-            },
-            { 
-                name: "Tokwa", 
-                price: [
-                    { price: "PHP 20", pieceCount: "5 PCS" } 
-                ],
-                img: require("../assets/images/tokwa.png"),
-            },
-            { 
-                name: "Siomai", 
-                price: [
-                    { price: "PHP 30", pieceCount: "5 PCS" } 
-                ],
-                img: require("../assets/images/siomai.png"),
-            },
-            { 
-                name: "One Day Old", 
-                price: [
-                    { price: "PHP 35", pieceCount: "3 PCS" } 
-                ],
-                img: require("../assets/images/oneDayOld.png"),
-            },
-            { 
-                name: "Pork & Cheese Dynamite", 
-                price: [
-                    { price: "PHP 80", pieceCount: "6 PCS" } 
-                ],
-                img: require("../assets/images/porkcheese.png"),
-            },
-            { 
-                name: "Chicken & Cheese Dynamite", 
-                price: [
-                    { price: "PHP 80", pieceCount: "6 PCS" } 
-                ],
-                img: require("../assets/images/chickencheese.png"),
-            },
-            { 
-                name: "Ham & Cheese Dynamite", 
-                price: [
-                    { price: "PHP 80", pieceCount: "6 PCS" } 
-                ],
-                img: require("../assets/images/hamcheese.png"),
-            }
-        ];
-
-        createCategoryDisplay("Street Foods", items);
-    } else if (category === "other") {
-        handleActiveState(Array.from(foodCategories.children), foodCategories.children[2], "activeCategory");
-        const items = [
-            { 
-                name: "Flavored Rice", 
-                price: [
-                    { price: "PHP 10", pieceCount: "1 CUP - STEAMED" }, 
-                    { price: "PHP 15", pieceCount: "1 CUP - SOY FRIED" },
-                    { price: "PHP 15", pieceCount: "1 CUP - GARLIC FRIED" }, 
-                    { price: "PHP 15", pieceCount: "1 CUP - JAVA" }
-                ],
-                img: require("../assets/images/rice.png"),
-            },
-            { 
-                name: "Sizzling Balut", 
-                price: [
-                    { price: "PHP 80", pieceCount: "4 PCS" }, 
-                    { price: "PHP 130", pieceCount: "6 PCS" }
-                ],
-                img: require("../assets/images/balut.png"),
-            },
-            { 
-                name: "Gulaman", 
-                price: [
-                    { price: "PHP 20", pieceCount: "16 OZ" } 
-                ],
-                img: require("../assets/images/gulaman.png"),
-            },
-            {
-                name: "Mojos",
-                price: [
-                    { price: "PHP 60", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/mojos.png"),
-            },
-            {
-                name: "Bapcorn",
-                price: [
-                    { price: "PHP 100", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/bapcorn.png"),
-            },
-            {
-                name: "Oysterrific Tofu",
-                price: [
-                    { price: "PHP 80", pieceCount: "1 BOX" }
-                ],
-                img: require("../assets/images/tofu.png"),
-            },
-            {
-                name: "Ham & Cheese Lumpia",
-                price: [
-                    { price: "PHP 60", pieceCount: "6 PCS" }
-                ],
-                img: require("../assets/images/cheesesticks.png"),
-            },
-        ];
-
-        createCategoryDisplay("Other Food Items", items);
-    } else if (category === "platter") {
-        handleActiveState(Array.from(foodCategories.children), foodCategories.children[3], "activeCategory");
-        const items = [
-            { 
-                name: "Mighty Wings", 
-                price: [
-                    { price: "PHP 400", pieceCount: "20 PCS" }, 
-                    { price: "PHP 800", pieceCount: "40 PCS" }
-                ],
-                img: require("../assets/images/platter.png"),
-            },
-            {
-                name: "Street Foods",
-                price: [
-                    { price: "PHP 100", pieceCount: "SMALL" }, 
-                    { price: "PHP 150", pieceCount: "MEDIUM" },
-                    { price: "PHP 200", pieceCount: "LARGE" }
-                ],
-                img: require("../assets/images/streetPlatter.png"),
-            }
-        ];
-
-        createCategoryDisplay("Platters", items, "padded");
+    if (selectedCategoryData) {
+        const { title, items } = selectedCategoryData;
+        const imageManipulation = (category === "wings") ? "round" : (category === "platter") ? "padded" : null;
+        if(selectedCategoryIndex !== 0) {
+            handleActiveState(Array.from(foodCategories.children), foodCategories.children[selectedCategoryIndex - 1], "activeCategory");
+        }
+        createCategoryDisplay(title, items, imageManipulation);
     }
     
     content.appendChild(menuCategories);
