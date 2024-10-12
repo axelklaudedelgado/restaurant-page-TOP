@@ -120,6 +120,12 @@ export default function loadHome() {
     menuButton.classList.add("menuButton");
     menuButton.textContent = "View Menu";
 
+    menuButton.addEventListener("click", () => {
+        loadTab(loadMenu, "featured");
+        
+        handleActiveState(navButtons, document.querySelector("#menuButton"), "activeNav");
+    });
+
     featuredItems.appendChild(featuredHeader);
     featuredItems.appendChild(foodItems);
     featuredItems.appendChild(menuButton);
