@@ -254,7 +254,7 @@ export default function loadMenu(category) {
 
     const categories = [
         { img: require("../assets/images/wings.png"), alt: "Chicken Wings Item", label: "Wings", categoryName: "wings" },
-        { img: require("../assets/images/streetFood.png"), alt: "Street Food Item", label: "Street Foods", categoryName: "street" },
+        { img: require("../assets/images/siomai.png"), alt: "Street Food Item", label: "Street Foods", categoryName: "street" },
         { img: require("../assets/images/mojos.png"), alt: "Other Item", label: "Other Items", categoryName: "other" },
         { img: require("../assets/images/platter.png"), alt: "Platter Item", label: "Platters", categoryName: "platter" }
     ];
