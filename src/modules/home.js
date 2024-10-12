@@ -15,6 +15,8 @@ export default function loadHome() {
     const foodCategories = document.createElement("div");
     foodCategories.classList.add("foodCategories");
 
+    const navButtons = document.querySelectorAll(".navButtons");
+
     const categories = [
         { img: require("../assets/images/wings.png"), alt: "Chicken Wings Item", label: "Wings", categoryName: "wings" },
         { img: require("../assets/images/streetFood.png"), alt: "Street Food Item", label: "Street Foods", categoryName: "street" },
@@ -28,7 +30,6 @@ export default function loadHome() {
         button.addEventListener("click", () => {
             loadTab(loadMenu, category.categoryName);
 
-            const navButtons = document.querySelectorAll(".navButtons");
             handleActiveState(navButtons, document.querySelector("#menuButton"), "activeNav");
         });
 
@@ -153,8 +154,7 @@ export default function loadHome() {
 
     contactButton.addEventListener("click", () => {
         loadTab(loadContact);
-
-        const navButtons = document.querySelectorAll(".navButtons");
+        
         handleActiveState(navButtons, document.querySelector("#contactButton"), "activeNav");
     });
 
