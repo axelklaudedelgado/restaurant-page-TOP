@@ -60,9 +60,14 @@ export default function loadHome() {
         img.classList.add("slideshowImage");
         img.src = cell.img;
         img.alt = cell.alt;
+        img.style.visibility = "hidden";
 
         carouselCell.appendChild(img);
         carousel.appendChild(carouselCell);
+
+        imagesLoaded(img, () => {
+            img.style.visibility = "visible"; 
+        });
     });
 
     slideshowContent.appendChild(foodCategories);
